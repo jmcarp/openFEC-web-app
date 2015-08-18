@@ -47,7 +47,8 @@ var sizeColumns = [
       var info = sizeInfo[row.size];
       return {
         min_amount: info.limits[0],
-        max_amount: info.limits[1]
+        max_amount: info.limits[1],
+        contributor_type: 'individual'
       };
     })
   }
@@ -90,7 +91,10 @@ var stateColumns = [
     width: '50%',
     className: 'all',
     render: tables.buildTotalLink(function(row) {
-      return {contributor_state: row.contributor_state};
+      return {
+        contributor_state: row.contributor_state,
+        contributor_type: 'individual'
+      };
     })
   },
 ];
@@ -102,7 +106,10 @@ var employerColumns = [
     className: 'all',
     orderable: false,
     render: tables.buildTotalLink(function(row) {
-      return {contributor_employer: row.employer};
+      return {
+        contributor_employer: row.employer,
+        contributor_type: 'individual'
+      };
     })
   }
 ];
@@ -114,7 +121,10 @@ var occupationColumns = [
     className: 'all',
     orderable: false,
     render: tables.buildTotalLink(function(row) {
-      return {contributor_occupation: row.occupation};
+      return {
+        contributor_occupation: row.occupation,
+        contributor_type: 'individual'
+      };
     })
   }
 ];
